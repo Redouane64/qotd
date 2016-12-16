@@ -19,7 +19,7 @@ namespace scratch
                                 //.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("hosting.json", optional: true)
                                 .AddEnvironmentVariables()
                             .Build())
-                            .UseUrls($"http://*.{Environment.GetEnvironmentVariable("PORT")}")
+                            .UseUrls($"http://*.{Environment.GetEnvironmentVariable("$PORT")}")
                             .UseKestrel()
                             .UseStartup<Startup>()
                             .Build()
