@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,6 +19,7 @@ namespace scratch
                                 //.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("hosting.json", optional: true)
                                 .AddEnvironmentVariables()
                             .Build())
+                            .UseUrls($"http://*.{Environment.GetEnvironmentVariable("PORT")}")
                             .UseKestrel()
                             .UseStartup<Startup>()
                             .Build()
@@ -25,7 +27,7 @@ namespace scratch
 
         public Startup(IHostingEnvironment env)
         {
-
+            
         }
 
         public void ConfigureServices(IServiceCollection services)
