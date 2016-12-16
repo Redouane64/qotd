@@ -15,8 +15,9 @@ namespace scratch
                             .UseContentRoot(Directory.GetCurrentDirectory())
                             .UseConfiguration(
                                 new ConfigurationBuilder()
-                                .SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("hosting.json", optional: true)
-                                .Build())
+                                //.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("hosting.json", optional: true)
+                                .AddEnvironmentVariables()
+                            .Build())
                             .UseKestrel()
                             .UseStartup<Startup>()
                             .Build()
