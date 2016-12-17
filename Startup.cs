@@ -14,11 +14,11 @@ namespace scratch
         public static void Main(string[] args)
                         => new WebHostBuilder()
                             .UseContentRoot(Directory.GetCurrentDirectory())
-                            /*.UseConfiguration(
+                            .UseConfiguration(
                                 new ConfigurationBuilder()
                                 //.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("hosting.json", optional: true)
-                                .AddEnvironmentVariables()
-                            .Build())*/
+                                .AddEnvironmentVariables().AddCommandLine(args)
+                            .Build())
                             .UseKestrel()
                             .UseStartup<Startup>()
                             .Build()
