@@ -1,8 +1,7 @@
-using System;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace scratch.Services
+namespace QOTD.Services
 {
     public class QOTD
     {

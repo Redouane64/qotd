@@ -1,11 +1,9 @@
-using System;
 using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using scratch.Services;
 
 namespace scratch
 {
@@ -16,7 +14,8 @@ namespace scratch
                             .UseContentRoot(Directory.GetCurrentDirectory())
                             .UseConfiguration(
                                 new ConfigurationBuilder()
-                                //.SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("hosting.json", optional: true)
+                                .SetBasePath(Directory.GetCurrentDirectory())
+                                .AddJsonFile("hosting.json", optional: true)
                                 .AddEnvironmentVariables().AddCommandLine(args)
                             .Build())
                             .UseKestrel()
@@ -34,11 +33,11 @@ namespace scratch
 
             services.AddMvc();
 
-            services.AddSingleton(typeof(QOTD));
+            services.AddSingleton(typeof(QOTD.Services.QOTD));
 
         }
 
-        public void Configure(IHostingEnvironment env, IApplicationBuilder app, QOTD quoteProvider)
+        public void Configure(IHostingEnvironment env, IApplicationBuilder app)
         {
 
             if (env.IsDevelopment())

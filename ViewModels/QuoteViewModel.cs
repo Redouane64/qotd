@@ -1,4 +1,4 @@
-namespace scratch.ViewModels
+namespace QOTD.ViewModels
 {
     public class QuoteViewModel
     {

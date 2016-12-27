@@ -1,15 +1,15 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using scratch.Services;
-using scratch.ViewModels;
+using qs = QOTD.Services;
+using QOTD.ViewModels;
 
-namespace scratch.Controllers
+namespace QOTD.Controllers
 {
     public class QOTDController : Controller
     {
-        private readonly QOTD _qotd;
+        private readonly qs.QOTD _qotd;
 
-        public QOTDController(QOTD qotd)
+        public QOTDController(qs.QOTD qotd)
         {
             _qotd = qotd;
         }
