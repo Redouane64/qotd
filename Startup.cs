@@ -12,6 +12,7 @@ namespace scratch
         public static void Main(string[] args)
                         => new WebHostBuilder()
                             .UseContentRoot(Directory.GetCurrentDirectory())
+                            .UseWebRoot("wwwroot")
                             .UseConfiguration(
                                 new ConfigurationBuilder()
                                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -45,6 +46,8 @@ namespace scratch
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+            
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.MapRoute(name: "default", template: "{controller=QOTD}/{action=Index}/{id?}");
