@@ -117,6 +117,10 @@ body {
   font-weight: bold;
 }
 
+.quote {
+  font-size: 1.50rem;
+  font-weight: 400;
+}
 
 /*
  * Footer
