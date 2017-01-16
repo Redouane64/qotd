@@ -27,9 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url(../images/hawaii_islands.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-image: url(../images/hawaii_islands.jpg)
 }
 body {
   color: #fff;
@@ -117,10 +115,6 @@ body {
   font-weight: bold;
 }
 
-.quote {
-  font-size: 1.50rem;
-  font-weight: 400;
-}
 
 /*
  * Footer
