@@ -1,4 +1,4 @@
 {
-    "environment": "DEVELOPMENT",
+    "environment": "Development",
     "urls": [ "http://localhost:5000" ]
 }
