@@ -14,7 +14,7 @@ namespace Qotd.Pages
 
 	    public void OnGet()
 	    {
-		    Quote = _provider.GetQuote(new Random().Next());
+		    Quote = _provider.GetQuote();
 	    }
     }
 }
